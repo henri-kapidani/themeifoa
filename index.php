@@ -4,13 +4,17 @@
 get_header(); ?>
 
 <h1><?php the_archive_title(); ?></h1>
+<p><?php the_archive_description(); ?></p>
 <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3"><?php
     while (have_posts()) {
         the_post(); ?>
         <div class="col">
             <div class="card h-100">
                 <img 
-                    src="<?= get_the_post_thumbnail_url() ?: wp_get_attachment_url(68); ?>"
+                    src="<?=
+                        // get_the_post_thumbnail_url() ?: wp_get_attachment_url();
+                        get_the_post_thumbnail_url() ?: get_theme_file_uri('/img/default.jpg');
+                    ?>"
                     class="card-img-top"
                     alt="<?php the_title(); ?>"
                 >

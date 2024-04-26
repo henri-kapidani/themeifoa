@@ -11,3 +11,7 @@ footer {
     min-height: 100px;
     background-color: brown;
 }
+
+.ifoa-sidebar {
+    background-color: salmon;
+}
